@@ -25,6 +25,15 @@
 
 ## 快速开始
 
+> **最短试用路径（Docker，约 5 步）**
+> 1. 安装 Docker Desktop（Windows 需在 BIOS 开启虚拟化）
+> 2. `cd deploy`
+> 3. `copy .env.example .env`（macOS/Linux 用 `cp`），编辑 `.env` 把 `LLM_API_KEY` 换成自己的 DeepSeek Key
+> 4. `docker compose up -d --build`（首次会拉取镜像并下载向量模型，建议内存 8GB+）
+> 5. 打开 http://localhost:8080 ，用 `admin / admin123` 登录
+>
+> 注意：`LLM_API_KEY` 必须是可用的 Key；缺失或无效时条款抽取会退化为规则切分，风险识别被跳过。
+
 ### 方式一：Docker 一键启动（推荐试用）
 
 需要 Docker 与 Docker Compose。
