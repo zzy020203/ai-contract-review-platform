@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.venv/
+
+# Frontend
+node_modules/
+dist/
+frontend/dist/
+
+# 本地数据库与运行时数据（保留目录占位）
+storage/*.db
+storage/*.db-*
+storage/contracts/*
+!storage/contracts/.gitkeep
+storage/reports/*
+!storage/reports/.gitkeep
+storage/knowledge/*
+storage/logs/*
+storage/uploads/*
+storage/milvus_lite.db/
+
+# 本地 PostgreSQL（conda 安装）
+.pg/
+.pgdata/
+
+# 密钥与环境变量（切勿提交）
+.env
+.env.local
+deploy/.env
+
+# 日志与运行时文件
+*.log
+*.log.*
+dump.rdb
+redis.pid
+*.lock
+
+# IDE / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 本地一次性调试脚本
+diag_*.py
+test_pg.py
+test_import.py
+check_clauses.py
+fix_clauses.py
+docs/_*

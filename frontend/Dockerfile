@@ -1,0 +1,12 @@
+# 前端镜像：Node 构建静态资源 → Nginx 承载（Nginx 配置由 compose 挂载 deploy/nginx/nginx.conf）
+FROM node:22-alpine AS build
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+FROM nginx:1.27-alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
